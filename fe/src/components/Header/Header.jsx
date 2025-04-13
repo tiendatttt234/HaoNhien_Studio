@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import logo from '../../assets/logo.jpg'; // Adjust path based on your structure
 
 const Header = () => {
   React.useEffect(() => {
@@ -14,7 +15,7 @@ const Header = () => {
         <div className="nav">
           <div className="div">
             <div className="a">
-              <div className="img"></div>
+              <img src={logo} alt="Logo" className="img" />
             </div>
             <div className="div-1">
               <div className="button">

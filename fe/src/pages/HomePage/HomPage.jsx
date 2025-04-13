@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import "./HomePage.css";
 import { useState, useEffect } from "react";
+import Header from "../../components/Header/Header"; // Adjust the import path based on your project structure
 
 function HomePage() {
   // State for current banner index
@@ -165,48 +166,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Navigation */}
-      <nav className="hn-nav">
-        <div className="hn-container hn-nav__container">
-          <div className="hn-nav__logo">
-            <img src="" alt="HAONHIEN Logo" className="hn-logo__img" />
-          </div>
-          <div className="hn-nav__menu">
-            <a href="#" className="hn-nav__link">
-              TRANG CHỦ
-            </a>
-            <div className="hn-nav__dropdown">
-              <button className="hn-nav__link hn-nav__dropdown-toggle">
-                SẢN PHẨM <ChevronDown className="hn-dropdown__icon" />
-              </button>
-            </div>
-            <div className="hn-nav__dropdown">
-              <button className="hn-nav__link hn-nav__dropdown-toggle">
-                DỊCH VỤ <ChevronDown className="hn-dropdown__icon" />
-              </button>
-            </div>
-            <div className="hn-nav__dropdown">
-              <button className="hn-nav__link hn-nav__dropdown-toggle">
-                TIN TỨC <ChevronDown className="hn-dropdown__icon" />
-              </button>
-            </div>
-            <a href="#" className="hn-btn hn-btn--primary hn-nav__btn">
-              ĐĂNG KÝ TƯ VẤN
-            </a>
-          </div>
-          <button className="hn-nav__toggle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="hn-nav__toggle-icon"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </nav>
+      {/* Header Section */}
+      <Header />
 
       {/* About Us Section */}
       <section className="hn-about">

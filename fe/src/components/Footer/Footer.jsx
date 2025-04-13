@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../../assets/logo.jpg'; // Import logo
 
 const Footer = () => {
   React.useEffect(() => {
@@ -12,7 +13,7 @@ const Footer = () => {
       <div className="container">
         {/* Logo Section */}
         <div className="logo-section">
-          <div className="logo-img" />
+          <img src={logo} alt="Logo" className="logo-img" /> {/* Replace div with img */}
         </div>
 
         {/* Contact Sections */}
@@ -107,7 +108,7 @@ const Footer = () => {
 
         {/* Company Info */}
         <div className="company-info">
-          <div className="company-logo" />
+          <img src={logo} alt="Company Logo" className="company-logo" /> {/* Replace div with img */}
           <div className="company-details">
             <p className="copyright">©Copyright 2014-2025</p>
             <p className="company-name">CÔNG TY CỔ PHẦN XHOME VIỆT NAM</p>
