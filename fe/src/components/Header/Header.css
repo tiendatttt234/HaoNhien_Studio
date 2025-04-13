@@ -1,0 +1,340 @@
+.header {
+  width: 1440px;
+  height: 70px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 128px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .header-1 {
+  position: absolute;
+  top: 0.05px;
+  left: 0;
+  width: 1440px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .div {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 1408px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .a {
+  position: absolute;
+  top: 0;
+  left: 285.03px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  background: url(https://image-resource.creatie.ai/155865189425801/155865189425803/75b3ef6bdbfeed6aa6499fc1a28b8188.png),
+    rgba(0, 0, 0, 0);
+  object-fit: cover;
+  background-size: cover;
+}
+
+.header .div-1 {
+  position: absolute;
+  top: 2px;
+  left: 333.03px;
+  width: 789.94px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .button {
+  position: absolute;
+  top: -0.05px;
+  left: 579.97px;
+  width: 179.22px;
+  height: 44px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 8px 24px;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #000000;
+}
+
+.header .text-ng-k-t-vn {
+  position: absolute;
+  top: 10px;
+  left: 26.11px;
+  width: 127px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.header .a-1 {
+  position: absolute;
+  top: 9.95px;
+  left: 61.97px;
+  width: 88.83px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .trang-ch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 89px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.header .rectangle-after {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 0.01px;
+  height: 2px;
+  background: #ff0000;
+}
+
+.header .a-2 {
+  position: absolute;
+  top: 10px;
+  left: 238.73px;
+  width: 137.89px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .rectangle-after-1 {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 0.01px;
+  height: 2px;
+  background: #ff0000;
+}
+
+.header .div-2 {
+  position: absolute;
+  top: 9.95px;
+  left: 463.97px;
+  width: 80.55px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .button-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80.55px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .i {
+  position: absolute;
+  top: 4px;
+  left: 68px;
+  width: 12px;
+  height: 16px;
+}
+
+.header .tin-tc {
+  position: absolute;
+  top: 0;
+  left: -0.23px;
+  width: 61px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.header .rectangle-after-2 {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 0.01px;
+  height: 2px;
+  background: #ff0000;
+}
+
+.header .div-3 {
+  position: absolute;
+  top: 26.95px;
+  left: 540px;
+  width: 102px;
+  height: 26px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .button-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101.91px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .i-1 {
+  position: absolute;
+  top: 4px;
+  left: 89px;
+  width: 12px;
+  height: 16px;
+}
+
+.header .sn-phm {
+  position: absolute;
+  top: 0;
+  left: -0.05px;
+  width: 82px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.header .rectangle-after-3 {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 0.01px;
+  height: 2px;
+  background: #ff0000;
+}
+
+.header .a-3 {
+  position: absolute;
+  top: 28.95px;
+  left: 701px;
+  width: 81px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.header .i-2 {
+  position: absolute;
+  top: 4px;
+  left: 69px;
+  width: 12px;
+  height: 16px;
+}
+
+.header .dch-v {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 62px;
+  height: 24px;
+  white-space: nowrap;
+  color: #000000;
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.header .rectangle-after-4 {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 0.01px;
+  height: 2px;
+  background: #ff0000;
+}
