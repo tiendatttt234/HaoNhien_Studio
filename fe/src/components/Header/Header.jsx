@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import logo from '../../assets/logo.jpg'; // Adjust path based on your structure
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   React.useEffect(() => {
@@ -10,7 +11,6 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="main"></div>
       <div className="header-1">
         <div className="nav">
           <div className="div">
@@ -21,13 +21,16 @@ const Header = () => {
               <div className="button">
                 <div className="text-ng-k-t-vn">ĐĂNG KÝ TƯ VẤN</div>
               </div>
-              <div className="a-1">
+
+              <Link to="/" className="a-1">
                 <div className="trang-ch">TRANG CHỦ</div>
                 <div className="rectangle-after"></div>
-              </div>
+              </Link>
+
               <div className="a-2">
                 <div className="rectangle-after-1"></div>
               </div>
+
               <div className="div-2">
                 <div className="button-1">
                   <svg id="95:1171" className="i"></svg>
@@ -37,13 +40,15 @@ const Header = () => {
               </div>
             </div>
           </div>
+
           <div className="div-3">
-            <div className="button-2">
+            <Link to="/product" className="button-2">
               <svg id="95:1158" className="i-1"></svg>
               <div className="sn-phm">SẢN PHẨM</div>
               <div className="rectangle-after-3"></div>
-            </div>
+            </Link>
           </div>
+
           <div className="a-3">
             <svg id="95:1018" className="i-2"></svg>
             <div className="dch-v">DỊCH VỤ</div>

@@ -1,28 +1,22 @@
 .header {
-  width: 1440px;
-  height: 70px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0);
-  position: relative; /* Ensure it flows naturally in the document */
   width: 100%;
-}
-
-.header .main {
-  position: absolute;
-  top: 0;
+  height: 70px;
+  background: transparent;
+  position: relative; /* Changed from sticky to relative */
+  /* Removed top: 0 property */
   left: 0;
-  width: 1440px;
-  height: 128px;
-  background: rgba(0, 0, 0, 0);
+  z-index: 1000; /* Ensures header is above other content */
+  overflow: hidden; /* Keeps content from overflowing */
 }
 
+/* Removed .main as it wasn't used in JSX */
 .header .header-1 {
   position: absolute;
   top: 0.05px;
   left: 0;
   width: 1440px;
   height: 80px;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .nav {
@@ -38,8 +32,8 @@
   flex-wrap: wrap;
   row-gap: 10px;
   column-gap: 10px;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0);
+  padding: 10px;
+  background: transparent;
 }
 
 .header .div {
@@ -54,7 +48,7 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .a {
@@ -69,7 +63,7 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .img {
@@ -93,7 +87,7 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .button {
@@ -111,7 +105,7 @@
   row-gap: 10px;
   column-gap: 10px;
   padding: 8px 24px;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   border: 2px solid #000000;
 }
 
@@ -136,7 +130,7 @@
   left: 61.97px;
   width: 88.83px;
   height: 24px;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .trang-ch {
@@ -168,7 +162,7 @@
   left: 238.73px;
   width: 137.89px;
   height: 24px;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .rectangle-after-1 {
@@ -186,7 +180,7 @@
   left: 463.97px;
   width: 80.55px;
   height: 24px;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .button-1 {
@@ -201,7 +195,7 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .i {
@@ -242,7 +236,7 @@
   left: 540px;
   width: 102px;
   height: 26px;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .button-2 {
@@ -257,7 +251,7 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .i-1 {
@@ -304,7 +298,7 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
 }
 
 .header .i-2 {
