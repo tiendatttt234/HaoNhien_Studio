@@ -1,62 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import logo from '../../assets/logo.jpg'; // Adjust path based on your structure
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  React.useEffect(() => {
-    // Initialize the code
-    return () => {};
-  }, []);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div className="header">
-      <div className="header-1">
-        <div className="nav">
-          <div className="div">
-            <div className="a">
-              <img src={logo} alt="Logo" className="img" />
-            </div>
-            <div className="div-1">
-              <div className="button">
-                <div className="text-ng-k-t-vn">ĐĂNG KÝ TƯ VẤN</div>
-              </div>
+    <header className="hn-header">
+      <div className="hn-header-container">
+        <Link to="/" className="hn-logo">
+          <img src={logo} alt="Logo" className="hn-logo-img" />
+        </Link>
 
-              <Link to="/" className="a-1">
-                <div className="trang-ch">TRANG CHỦ</div>
-                <div className="rectangle-after"></div>
-              </Link>
+        <button className="hn-menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          <span className="hn-menu-icon"></span>
+        </button>
 
-              <div className="a-2">
-                <div className="rectangle-after-1"></div>
-              </div>
-
-              <div className="div-2">
-                <div className="button-1">
-                  <svg id="95:1171" className="i"></svg>
-                  <div className="tin-tc">TIN TỨC</div>
-                  <div className="rectangle-after-2"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="div-3">
-            <Link to="/product" className="button-2">
-              <svg id="95:1158" className="i-1"></svg>
-              <div className="sn-phm">SẢN PHẨM</div>
-              <div className="rectangle-after-3"></div>
-            </Link>
-          </div>
-
-          <div className="a-3">
-            <svg id="95:1018" className="i-2"></svg>
-            <div className="dch-v">DỊCH VỤ</div>
-            <div className="rectangle-after-4"></div>
-          </div>
-        </div>
+        <nav className={`hn-nav-head ${isMenuOpen ? 'hn-nav-open' : ''}`}>
+          <Link to="/" className="hn-nav-link">
+            TRANG CHỦ
+          </Link>
+          <Link to="/product" className="hn-nav-link">
+            SẢN PHẨM
+          </Link>
+          <a href="#" className="hn-nav-link">
+            DỊCH VỤ
+          </a>
+          <a href="#" className="hn-nav-link">
+            TIN TỨC
+          </a>
+          <button className="hn-consult-button">ĐĂNG KÝ TƯ VẤN</button>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

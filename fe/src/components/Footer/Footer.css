@@ -1,72 +1,60 @@
 .footer {
   width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding: 50px 0;
-  margin-top: 20px;
+  align-items: center;
+  padding: 40px 0;
   background: #000000;
+  color: #ffffff;
 }
 
 .container {
-  position: relative;
   width: 100%;
-  height: 304px;
+  max-width: 1200px;
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 0 16px;
-}
-
-.logo-section {
-  width: 316px;
-  height: 304px;
-}
-
-.logo-img {
-  width: 316px;
-  height: 177.75px;
-  background: url("https://image-resource.creatie.ai/155865189425801/155865189425803/ffd0121382f6fc68947432718a5365bc.png")
-    no-repeat center;
-  background-size: cover;
+  box-sizing: border-box;
 }
 
 .contact-sections {
-  width: 680px;
-  height: 304px;
+  flex: 2 1 600px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 48px;
+  gap: 24px;
+  margin-right: 24px;
 }
 
 .region {
-  width: 205.33px;
-  height: 304px;
+  flex: 1 1 200px;
+  min-width: 180px;
 }
 
 .region-title {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
   line-height: 28px;
   font-weight: 600;
   color: #ffffff;
 }
 
 .region-content {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .city {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .city-title {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
   line-height: 24px;
   font-weight: 500;
   color: #ffffff;
@@ -77,10 +65,11 @@
   align-items: flex-start;
   margin: 8px 0 0;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 1.8vw, 14px);
   line-height: 20px;
   font-weight: 400;
   color: #ffffff;
+  overflow-wrap: break-word;
 }
 
 .icon {
@@ -99,21 +88,19 @@
 }
 
 .company-info {
-  width: 316px;
-  height: 304px;
-  margin-left: 48px;
+  flex: 1 1 300px;
+  max-width: 316px;
+  margin-top: 24px;
 }
 
 .company-logo {
   width: 48px;
   height: 48px;
-  background: url("https://image-resource.creatie.ai/155865189425801/155865189425803/75b3ef6bdbfeed6aa6499fc1a28b8188.png")
-    no-repeat center;
-  background-size: cover;
+  object-fit: contain;
 }
 
 .company-details {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .copyright,
@@ -122,7 +109,7 @@
 .company-license {
   margin: 12px 0 0;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 1.8vw, 14px);
   line-height: 20px;
   color: #ffffff;
 }
@@ -132,5 +119,78 @@
 }
 
 .company-license {
-  max-width: 307px;
+  max-width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-sections,
+  .company-info {
+    margin: 16px 0;
+    max-width: 100%;
+  }
+
+  .contact-sections {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  .region {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 24px 0;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .region-title,
+  .city-title {
+    font-size: clamp(14px, 2.2vw, 16px);
+  }
+
+  .city-info {
+    font-size: clamp(11px, 1.6vw, 13px);
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-sections {
+    margin: 12px 0;
+  }
+
+  .region {
+    min-width: 100%;
+  }
+
+  .city {
+    margin-bottom: 16px;
+  }
+
+  .city-info {
+    font-size: 12px;
+  }
+
+  .company-info {
+    text-align: center;
+  }
+
+  .company-logo {
+    margin: 0 auto;
+  }
 }

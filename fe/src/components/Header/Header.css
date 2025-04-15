@@ -1,333 +1,180 @@
-.header {
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hn-header {
   width: 100%;
-  height: 70px;
-  background: transparent;
-  position: relative; /* Changed from sticky to relative */
-  /* Removed top: 0 property */
+  background: transparent; /* Explicitly transparent */
+  position: relative;
   left: 0;
-  z-index: 1000; /* Ensures header is above other content */
-  overflow: hidden; /* Keeps content from overflowing */
+  z-index: 1000;
+  font-family: "Roboto", sans-serif;
 }
 
-/* Removed .main as it wasn't used in JSX */
-.header .header-1 {
-  position: absolute;
-  top: 0.05px;
-  left: 0;
-  width: 1440px;
-  height: 80px;
-  background: transparent;
-}
-
-.header .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1440px;
-  height: 80px;
+.hn-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  flex-wrap: wrap;
-  row-gap: 10px;
-  column-gap: 10px;
-  padding: 10px;
-  background: transparent;
-}
-
-.header .div {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  width: 1408px;
-  height: 48px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0;
-  background: transparent;
+  justify-content: center; /* Center the content horizontally */
+  min-height: 70px; /* Base height */
 }
 
-.header .a {
-  position: absolute;
-  top: 0;
-  left: 285.03px;
-  width: 48px;
-  height: 48px;
+.hn-logo {
   display: flex;
-  flex-direction: row;
-  justify-content: start;
   align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0;
-  background: transparent;
+  margin-right: 10px; /* Add spacing between logo and TRANG CHỦ */
+  order: 0; /* Ensure logo stays first */
 }
 
-.header .img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 48px;
-  height: 48px;
+.hn-logo-img {
+  width: 36px;
+  height: 36px;
   object-fit: cover;
+  border-radius: 50%;
+  background: transparent; /* Ensure logo background is transparent */
 }
 
-.header .div-1 {
-  position: absolute;
-  top: 2px;
-  left: 333.03px;
-  width: 789.94px;
-  height: 44px;
+.hn-nav-head {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0;
-  background: transparent;
+  gap: 20px;
+  flex-grow: 0;
+  padding: 0 20px;
 }
 
-.header .button {
+.hn-nav-link {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400; /* Changed from 500 to 400 for normal text */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.hn-nav-link:hover::after {
+  content: "";
   position: absolute;
-  top: -0.05px;
-  left: 579.97px;
-  width: 179.22px;
-  height: 44px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  flex-wrap: wrap;
-  row-gap: 10px;
-  column-gap: 10px;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff0000;
+}
+
+.hn-consult-button {
   padding: 8px 24px;
-  background: transparent;
-  border: 2px solid #000000;
-}
-
-.header .text-ng-k-t-vn {
-  position: absolute;
-  top: 10px;
-  left: 26.11px;
-  width: 127px;
-  height: 24px;
-  white-space: nowrap;
-  color: #000000;
-  font-family: "Roboto";
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: transparent; /* Keep button transparent */
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  text-align: center;
+  font-weight: 400; /* Ensure normal weight, already set but confirmed */
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
-.header .a-1 {
-  position: absolute;
-  top: 9.95px;
-  left: 61.97px;
-  width: 88.83px;
-  height: 24px;
-  background: transparent;
+.hn-consult-button:hover {
+  background: #000;
+  color: #fff;
 }
 
-.header .trang-ch {
+.hn-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hn-menu-icon,
+.hn-menu-icon::before,
+.hn-menu-icon::after {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #000;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hn-menu-icon {
+  position: relative;
+}
+
+.hn-menu-icon::before,
+.hn-menu-icon::after {
+  content: "";
   position: absolute;
-  top: 0;
   left: 0;
-  width: 89px;
-  height: 24px;
-  white-space: nowrap;
-  color: #000000;
-  font-family: "Roboto";
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
 }
 
-.header .rectangle-after {
-  position: absolute;
-  top: 26px;
-  left: 0;
-  width: 0.01px;
-  height: 2px;
-  background: #ff0000;
+.hn-menu-icon::before {
+  top: -8px;
 }
 
-.header .a-2 {
-  position: absolute;
-  top: 10px;
-  left: 238.73px;
-  width: 137.89px;
-  height: 24px;
-  background: transparent;
+.hn-menu-icon::after {
+  bottom: -8px;
 }
 
-.header .rectangle-after-1 {
-  position: absolute;
-  top: 26px;
-  left: 0;
-  width: 0.01px;
-  height: 2px;
-  background: #ff0000;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hn-header {
+    height: auto; /* Allow header to expand */
+    background: transparent; /* Ensure transparency on mobile */
+  }
+
+  .hn-header-container {
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    min-height: 60px;
+    justify-content: space-between; /* Change back to space-between on mobile */
+  }
+
+  .hn-menu-toggle {
+    display: block;
+    order: 2; /* Move to end */
+  }
+
+  .hn-logo {
+    order: 0; /* Keep logo first */
+  }
+
+  .hn-nav {
+    display: none; /* Hidden by default */
+    width: 100%;
+    background: transparent; /* Transparent for mobile menu */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: none; /* No shadow */
+    order: 3; /* Place nav after logo and menu button */
+  }
+
+  .hn-nav-open {
+    display: flex; /* Show when toggled */
+  }
+
+  .hn-nav-link,
+  .hn-consult-button {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 400; /* Ensure normal weight in mobile view */
+  }
+
+  .hn-nav-link:hover::after {
+    display: none;
+  }
 }
 
-.header .div-2 {
-  position: absolute;
-  top: 9.95px;
-  left: 463.97px;
-  width: 80.55px;
-  height: 24px;
-  background: transparent;
-}
+@media (max-width: 480px) {
+  .hn-header-container {
+    padding: 0 15px;
+  }
 
-.header .button-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80.55px;
-  height: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0;
-  background: transparent;
-}
-
-.header .i {
-  position: absolute;
-  top: 4px;
-  left: 68px;
-  width: 12px;
-  height: 16px;
-}
-
-.header .tin-tc {
-  position: absolute;
-  top: 0;
-  left: -0.23px;
-  width: 61px;
-  height: 24px;
-  white-space: nowrap;
-  color: #000000;
-  font-family: "Roboto";
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.header .rectangle-after-2 {
-  position: absolute;
-  top: 26px;
-  left: 0;
-  width: 0.01px;
-  height: 2px;
-  background: #ff0000;
-}
-
-.header .div-3 {
-  position: absolute;
-  top: 26.95px;
-  left: 540px;
-  width: 102px;
-  height: 26px;
-  background: transparent;
-}
-
-.header .button-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 101.91px;
-  height: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0;
-  background: transparent;
-}
-
-.header .i-1 {
-  position: absolute;
-  top: 4px;
-  left: 89px;
-  width: 12px;
-  height: 16px;
-}
-
-.header .sn-phm {
-  position: absolute;
-  top: 0;
-  left: -0.05px;
-  width: 82px;
-  height: 24px;
-  white-space: nowrap;
-  color: #000000;
-  font-family: "Roboto";
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.header .rectangle-after-3 {
-  position: absolute;
-  top: 26px;
-  left: 0;
-  width: 0.01px;
-  height: 2px;
-  background: #ff0000;
-}
-
-.header .a-3 {
-  position: absolute;
-  top: 28.95px;
-  left: 701px;
-  width: 81px;
-  height: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  flex-wrap: wrap;
-  row-gap: 0;
-  background: transparent;
-}
-
-.header .i-2 {
-  position: absolute;
-  top: 4px;
-  left: 69px;
-  width: 12px;
-  height: 16px;
-}
-
-.header .dch-v {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 62px;
-  height: 24px;
-  white-space: nowrap;
-  color: #000000;
-  font-family: "Roboto";
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-}
-
-.header .rectangle-after-4 {
-  position: absolute;
-  top: 26px;
-  left: 0;
-  width: 0.01px;
-  height: 2px;
-  background: #ff0000;
+  .hn-logo-img {
+    width: 30px;
+    height: 30px;
+  }
 }

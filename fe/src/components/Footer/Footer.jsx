@@ -1,21 +1,15 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../../assets/logo.jpg'; // Import logo
+import logo from '../../assets/logo.jpg';
 
 const Footer = () => {
   React.useEffect(() => {
-    // Initialize the code
     return () => {};
   }, []);
 
   return (
     <footer className="footer">
       <div className="container">
-        {/* Logo Section */}
-        <div className="logo-section">
-          <img src={logo} alt="Logo" className="logo-img" /> {/* Replace div with img */}
-        </div>
-
         {/* Contact Sections */}
         <div className="contact-sections">
           {/* Northern Region */}
@@ -108,7 +102,7 @@ const Footer = () => {
 
         {/* Company Info */}
         <div className="company-info">
-          <img src={logo} alt="Company Logo" className="company-logo" /> {/* Replace div with img */}
+          <img src={logo} alt="Company Logo" className="company-logo" />
           <div className="company-details">
             <p className="copyright">©Copyright 2014-2025</p>
             <p className="company-name">CÔNG TY CỔ PHẦN XHOME VIỆT NAM</p>

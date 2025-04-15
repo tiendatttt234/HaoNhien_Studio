@@ -24,7 +24,33 @@ const Product = () => {
 
   // State for carousel
   const [currentPosition, setCurrentPosition] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [visibleBrands, setVisibleBrands] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  // Update visible brands when screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 576) {
+        setVisibleCount(2);
+      } else if (window.innerWidth <= 768) {
+        setVisibleCount(3);
+      } else {
+        setVisibleCount(4);
+      }
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Update visible brands when position or count changes
+  useEffect(() => {
+    updateVisibleBrands();
+  }, [currentPosition, visibleCount]);
 
   // Background-image style function
   const getBackgroundStyle = (imageUrl) => {
@@ -38,54 +64,65 @@ const Product = () => {
 
   // Function to handle next slide
   const nextSlide = () => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
-    setCurrentPosition(prev => {
+    setCurrentPosition((prev) => {
       const newPosition = prev + 1;
       return newPosition >= brandData.length ? 0 : newPosition;
     });
-    
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 500); // Match this with CSS transition time
   };
 
   // Function to handle previous slide
   const prevSlide = () => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
-    setCurrentPosition(prev => {
+    setCurrentPosition((prev) => {
       const newPosition = prev - 1;
       return newPosition < 0 ? brandData.length - 1 : newPosition;
     });
-    
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 500); // Match this with CSS transition time
   };
 
   // Get visible brands based on current position
-  const getVisibleBrands = () => {
-    // Create a circular array that repeats the brands
-    const extendedBrands = [...brandData, ...brandData, ...brandData];
-    // Calculate the start index for our current view
-    const startIndex = currentPosition + brandData.length; // Add length to avoid negative indices
-    
-    // Return 4 consecutive brands from the extended array
-    return [
-      extendedBrands[startIndex % extendedBrands.length],
-      extendedBrands[(startIndex + 1) % extendedBrands.length],
-      extendedBrands[(startIndex + 2) % extendedBrands.length],
-      extendedBrands[(startIndex + 3) % extendedBrands.length]
-    ];
+  const updateVisibleBrands = () => {
+    const visibleItems = [];
+    for (let i = 0; i < visibleCount; i++) {
+      const index = (currentPosition + i) % brandData.length;
+      visibleItems.push(brandData[index]);
+    }
+    setVisibleBrands(visibleItems);
   };
-
-  const visibleBrands = getVisibleBrands();
 
   return (
     <div className="product-container">
+      <div className="hero-section">
+        <div className="hero-image" style={getBackgroundStyle(images.hero)}></div>
+      </div>
+      
+      {/* Brand carousel section */}
+      <div className="brand-carousel-container">
+        {/* Navigation buttons */}
+        <button className="carousel-nav-btn prev-btn" onClick={prevSlide} aria-label="Previous">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <button className="carousel-nav-btn next-btn" onClick={nextSlide} aria-label="Next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        
+        {/* Brand cards */}
+        <div className="brand-cards-wrapper">
+          {visibleBrands.map((brand, index) => (
+            <div key={brand.id} className="brand-card">
+              <div className="brand-inner">
+                <div className="brand-image" style={getBackgroundStyle(brand.image)}></div>
+                <div className="brand-label">
+                  <div className="brand-label-text">{brand.label}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
       <div className="content-wrapper">
         <div className="section-title">
           <div className="title-text">CÁC GÓI DỊCH VỤ</div>
@@ -121,6 +158,9 @@ const Product = () => {
             </div>
           </div>
           <div className="service-row reversed">
+            <div className="service-image-wrapper">
+              <div className="service-image" style={getBackgroundStyle(images.service2)}></div>
+            </div>
             <div className="service-content">
               <div className="service-title">
                 <div className="service-title-text">Tư vấn triển khai thi công nhanh</div>
@@ -135,9 +175,6 @@ const Product = () => {
               <div className="view-more-btn">
                 <div className="btn-text">Xem thêm</div>
               </div>
-            </div>
-            <div className="service-image-wrapper">
-              <div className="service-image" style={getBackgroundStyle(images.service2)}></div>
             </div>
           </div>
           <div className="service-row">
@@ -160,49 +197,6 @@ const Product = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="hero-section">
-        <div className="hero-image" style={getBackgroundStyle(images.hero)}></div>
-      </div>
-      
-      {/* Brand carousel section */}
-      <div className="brand-carousel-container">
-        {/* Navigation buttons */}
-        <button className="carousel-nav-btn prev-btn" onClick={prevSlide}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <button className="carousel-nav-btn next-btn" onClick={nextSlide}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        
-        {/* Brand cards */}
-        <div className={`brand-cards-wrapper ${isTransitioning ? 'transitioning' : ''}`} style={{ transform: `translateX(${currentPosition * -220}px)` }}>
-          {visibleBrands.map((brand, index) => (
-            <div key={`${brand.id}-${index}`} className={`brand-card brand-position-${index + 1}`}>
-              <div className="brand-inner">
-                <div className="brand-image" style={getBackgroundStyle(brand.image)}></div>
-                <div className="brand-label">
-                  <div className="brand-label-text">{brand.label}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Indicators */}
-        <div className="carousel-indicators">
-          {brandData.map((_, index) => (
-            <span 
-              key={index} 
-              className={`indicator ${index === currentPosition % brandData.length ? 'active' : ''}`}
-              onClick={() => setCurrentPosition(index)}
-            ></span>
-          ))}
         </div>
       </div>
     </div>
