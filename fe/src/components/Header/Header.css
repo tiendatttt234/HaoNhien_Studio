@@ -1,3 +1,4 @@
+/* Header.css */
 /* Reset and base styles */
 * {
   margin: 0;
@@ -7,7 +8,7 @@
 
 .hn-header {
   width: 100%;
-  background: transparent; /* Explicitly transparent */
+  background: transparent;
   position: relative;
   left: 0;
   z-index: 1000;
@@ -20,15 +21,15 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the content horizontally */
-  min-height: 70px; /* Base height */
+  justify-content: space-between;
+  min-height: 70px;
 }
 
 .hn-logo {
   display: flex;
   align-items: center;
-  margin-right: 10px; /* Add spacing between logo and TRANG CHỦ */
-  order: 0; /* Ensure logo stays first */
+  margin-right: 10px;
+  order: 0;
 }
 
 .hn-logo-img {
@@ -36,7 +37,7 @@
   height: 36px;
   object-fit: cover;
   border-radius: 50%;
-  background: transparent; /* Ensure logo background is transparent */
+  background: transparent;
 }
 
 .hn-nav-head {
@@ -50,7 +51,7 @@
 .hn-nav-link {
   color: #000;
   font-size: 16px;
-  font-weight: 400; /* Changed from 500 to 400 for normal text */
+  font-weight: 400;
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
@@ -66,13 +67,66 @@
   background: #ff0000;
 }
 
+/* Dropdown styles */
+.hn-dropdown {
+  position: relative;
+}
+
+.hn-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.hn-dropdown-toggle::after {
+  content: "▼";
+  font-size: 10px;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.hn-dropdown:hover .hn-dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.hn-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.hn-dropdown:hover .hn-dropdown-menu {
+  display: block;
+}
+
+.hn-dropdown-item {
+  display: block;
+  padding: 8px 15px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hn-dropdown-item:hover {
+  background: #f0f0f0;
+}
+
 .hn-consult-button {
   padding: 8px 24px;
   border: 2px solid #000;
   border-radius: 4px;
-  background: transparent; /* Keep button transparent */
+  background: transparent;
   font-size: 16px;
-  font-weight: 400; /* Ensure normal weight, already set but confirmed */
+  font-weight: 400;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
@@ -118,41 +172,91 @@
   bottom: -8px;
 }
 
+/* Search styles */
+.hn-search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hn-search-input {
+  padding: 8px 40px 8px 12px;
+  border: 2px solid #000;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.hn-search-input:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+.hn-search-button {
+  padding: 8px 12px;
+  border: 2px solid #000;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.hn-search-button:hover {
+  background: #000;
+}
+
+.hn-search-icon {
+  font-size: 16px;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.hn-search-button:hover .hn-search-icon {
+  color: #fff;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .hn-header {
-    height: auto; /* Allow header to expand */
-    background: transparent; /* Ensure transparency on mobile */
+    height: auto;
+    background: transparent;
   }
 
   .hn-header-container {
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    flex-wrap: wrap;
     min-height: 60px;
-    justify-content: space-between; /* Change back to space-between on mobile */
+    justify-content: space-between;
   }
 
   .hn-menu-toggle {
     display: block;
-    order: 2; /* Move to end */
+    order: 2;
   }
 
   .hn-logo {
-    order: 0; /* Keep logo first */
+    order: 0;
   }
 
-  .hn-nav {
-    display: none; /* Hidden by default */
+  .hn-nav-head {
+    display: none;
     width: 100%;
-    background: transparent; /* Transparent for mobile menu */
+    background: transparent;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    box-shadow: none; /* No shadow */
-    order: 3; /* Place nav after logo and menu button */
+    box-shadow: none;
+    order: 3;
   }
 
   .hn-nav-open {
-    display: flex; /* Show when toggled */
+    display: flex;
   }
 
   .hn-nav-link,
@@ -160,11 +264,66 @@
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    font-weight: 400; /* Ensure normal weight in mobile view */
+    font-weight: 400;
   }
 
   .hn-nav-link:hover::after {
     display: none;
+  }
+
+  .hn-search-container {
+    width: 100%;
+    margin: 10px 0;
+    order: 4;
+  }
+
+  .hn-search-input {
+    width: 100%;
+    border-radius: 4px;
+    border: 2px solid #000;
+  }
+
+  .hn-search-button {
+    border-radius: 4px;
+    border: 2px solid #000;
+    border-left: 2px solid #000;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  /* Dropdown mobile styles */
+  .hn-dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hn-dropdown-toggle::after {
+    display: none; /* Hide arrow in mobile view */
+  }
+
+  .hn-dropdown-menu {
+    position: static;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+  }
+
+  .hn-dropdown:hover .hn-dropdown-menu {
+    display: block;
+  }
+
+  .hn-dropdown-item {
+    padding: 8px 0;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .hn-dropdown-item:hover {
+    background: transparent;
   }
 }
 
@@ -176,5 +335,18 @@
   .hn-logo-img {
     width: 30px;
     height: 30px;
+  }
+
+  .hn-search-input {
+    font-size: 12px;
+    padding: 6px 35px 6px 10px;
+  }
+
+  .hn-search-button {
+    padding: 6px 10px;
+  }
+
+  .hn-search-icon {
+    font-size: 14px;
   }
 }

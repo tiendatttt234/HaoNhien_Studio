@@ -1,13 +1,21 @@
+// Header.jsx
 import React, { useState } from 'react';
 import './Header.css';
 import logo from '../../assets/logo.jpg'; // Adjust path based on your structure
 import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/fa'; // For search icon
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log('Search query:', searchQuery); // Replace with your search logic
   };
 
   return (
@@ -25,9 +33,16 @@ const Header = () => {
           <Link to="/" className="hn-nav-link">
             TRANG CHỦ
           </Link>
-          <Link to="/product" className="hn-nav-link">
-            SẢN PHẨM
-          </Link>
+          <div className="hn-nav-link hn-dropdown">
+            <Link to="/product" className="hn-dropdown-toggle">
+              SẢN PHẨM
+            </Link>
+            <div className="hn-dropdown-menu">
+              <a href="noithat" className="hn-dropdown-item">
+                Nội thất chung cư
+              </a>
+            </div>
+          </div>
           <a href="#" className="hn-nav-link">
             DỊCH VỤ
           </a>
@@ -36,6 +51,20 @@ const Header = () => {
           </a>
           <button className="hn-consult-button">ĐĂNG KÝ TƯ VẤN</button>
         </nav>
+
+        <form className="hn-search-container" onSubmit={handleSearch}>
+          <input
+            type="text"
+            className="hn-search-input"
+            placeholder="Tìm kiếm..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label="Search"
+          />
+          <button type="submit" className="hn-search-button" aria-label="Search button">
+            <FaSearch className="hn-search-icon" />
+          </button>
+        </form>
       </div>
     </header>
   );

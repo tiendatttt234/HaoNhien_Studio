@@ -1,0 +1,299 @@
+.pbc-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #f9fafb;
+  padding-top: 600px; /* Match banner height to push .pbc-main down */
+}
+
+/* Banner Section */
+.pbc-banner {
+  width: 100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+  z-index: 30; /* Above header (assumed z-index: 20 or lower) */
+  overflow: hidden;
+}
+
+.pbc-banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pbc-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.pbc-banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pbc-banner-text {
+  text-align: center;
+}
+
+.pbc-banner-title {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0;
+}
+
+.pbc-banner-subtitle {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 24px 0 0;
+}
+
+/* Main Section */
+.pbc-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pbc-intro {
+  width: 100%;
+  max-width: 1248px;
+  text-align: center;
+}
+
+.pbc-intro-title {
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  margin: 0;
+}
+
+.pbc-intro-description {
+  color: #4b5563;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 24px auto 0;
+  max-width: 768px;
+}
+
+/* Projects Grid */
+.pbc-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1152px;
+  margin-top: 64px;
+}
+
+.pbc-project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pbc-project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 80px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+  transform-origin: center;
+}
+
+.pbc-project-image-wrapper:hover {
+  border-radius: 0;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pbc-project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: border-radius 0.3s ease;
+}
+
+.pbc-project-image:hover {
+  border-radius: 0;
+}
+
+.pbc-project-title {
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+/* Pagination */
+.pbc-pagination {
+  display: flex;
+  gap: 12px;
+  margin-top: 64px;
+}
+
+.pbc-pagination-button {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pbc-pagination-button:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .pbc-container {
+    max-width: 100%;
+    padding-top: 500px; /* Match banner height */
+  }
+
+  .pbc-banner-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .pbc-banner-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .pbc-main {
+    padding: 60px 24px;
+  }
+
+  .pbc-intro-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .pbc-intro-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .pbc-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .pbc-project-image-wrapper {
+    border-radius: 60px;
+  }
+
+  .pbc-project-title {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 20px 0 0;
+  }
+
+  .pbc-pagination {
+    margin-top: 48px;
+  }
+
+  .pbc-pagination-button {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .pbc-container {
+    padding-top: 400px; /* Match banner height */
+  }
+  .pbc-banner {
+    height: 200px;
+  }
+  .pbc-banner-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .pbc-banner-subtitle {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
+  .pbc-main {
+    padding: 64px 16px;
+  }
+
+  .pbc-intro-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .pbc-intro-description {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 16px;
+  }
+
+  .pbc-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .pbc-project-image-wrapper {
+    border-radius: 40px;
+  }
+
+  .pbc-project-title {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 16px 0 0;
+  }
+
+  .pbc-pagination {
+    margin-top: 32px;
+    gap: 10px;
+  }
+
+  .pbc-pagination-button {
+    width: 12px;
+    height: 12px;
+  }
+}
