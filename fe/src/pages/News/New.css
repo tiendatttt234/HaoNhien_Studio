@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  color: #000000;
+  position: relative; /* Ensure the body has a positioning context */
+}
+
+/* Global header styling - this will affect any header imported from App.js */
+header {
+  position: fixed; /* Fix the header to the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Very high z-index to ensure it's on top */
+}
+
+.news-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  position: relative;
+}
+
+/* Banner section - now positioned to allow header overlay */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://image-resource.creatie.ai/155865189425801/155865189425803/cdce423d809814061432ef07071dc993.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.banner-title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Main content */
+.main-content {
+  padding: 48px 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* Article grid */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.article-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-image {
+  width: 100%;
+  height: 256px;
+  background-size: cover;
+  background-position: center;
+}
+
+.article-image-1 {
+  background-image: url("https://image-resource.creatie.ai/155865189425801/155865189425803/e915e6fe036a0c9178cbc3fbe87dca3b.png");
+}
+
+.article-image-2 {
+  background-image: url("https://image-resource.creatie.ai/155865189425801/155865189425803/3a822173a22ee279e77a0805dd47f103.png");
+}
+
+.article-image-3 {
+  background-image: url("https://image-resource.creatie.ai/155865189425801/155865189425803/dd1d20aa74ed33cd0cc0c7ff2a66730d.png");
+}
+
+.article-image-4 {
+  background-image: url("https://image-resource.creatie.ai/155865189425801/155865189425803/47e8df42d62b0539a4bc0fe3c17603bb.png");
+}
+
+.article-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 12px;
+}
+
+.article-excerpt {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.read-more-btn {
+  width: max-content;
+  padding: 8px 24px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #333333;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-number,
+.page-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  color: #4b5563;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.page-number.active {
+  background: #000000;
+  color: #ffffff;
+}
+
+.page-number:hover:not(.active),
+.page-next:hover {
+  background: #f5f5f5;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 400px;
+  }
+
+  .banner-title {
+    font-size: 28px;
+  }
+
+  .article-image {
+    height: 200px;
+  }
+
+  .article-title {
+    font-size: 18px;
+  }
+
+  .article-excerpt {
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductByCategory.css';
 
 const ProductByCategory = () => {
@@ -59,12 +60,12 @@ const ProductByCategory = () => {
         </div>
         <div className="pbc-projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="pbc-project-item">
+            <Link to="/detail" key={index} className="pbc-project-item">
               <div className="pbc-project-image-wrapper">
                 <img src={project.image} alt={`${project.name} Interior`} className="pbc-project-image" />
               </div>
               <h3 className="pbc-project-title">{project.name}</h3>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="pbc-pagination">

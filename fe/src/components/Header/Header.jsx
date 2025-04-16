@@ -46,10 +46,10 @@ const Header = () => {
           <a href="#" className="hn-nav-link">
             DỊCH VỤ
           </a>
-          <a href="#" className="hn-nav-link">
+          <a href="/new" className="hn-nav-link">
             TIN TỨC
           </a>
-          <button className="hn-consult-button">ĐĂNG KÝ TƯ VẤN</button>
+          <Link to="/support" className="hn-consult-button">ĐĂNG KÝ TƯ VẤN</Link>
         </nav>
 
         <form className="hn-search-container" onSubmit={handleSearch}>

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ProductDetail.css';
 
+// Dữ liệu liên quan
 const relatedProducts = [
   { name: 'Lancaster Eden Villa', img: 'https://image-resource.creatie.ai/155865189425801/155865189425803/c3bb0b4cf77f114c7130208511a9de56.png' },
   { name: 'Villa CS Đức Phúc', img: 'https://image-resource.creatie.ai/155865189425801/155865189425803/2da34ca6a052c9fe6a98f5c03ed4405d.png' },
@@ -27,7 +28,7 @@ const ProductDetail = () => {
   const [isBrowserFullscreen, setIsBrowserFullscreen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
-  const [mainImage, setMainImage] = useState(galleryImages[0]); // Initialize with first gallery image
+  const [mainImage, setMainImage] = useState(galleryImages[0]);
   const fullscreenRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -39,7 +40,7 @@ const ProductDetail = () => {
   const handleGalleryNext = () => {
     setGalleryPosition((prev) => {
       const newPos = (prev + 1) % galleryImages.length;
-      setMainImage(galleryImages[newPos]); // Update main image
+      setMainImage(galleryImages[newPos]);
       return newPos;
     });
   };
@@ -47,7 +48,7 @@ const ProductDetail = () => {
   const handleGalleryPrev = () => {
     setGalleryPosition((prev) => {
       const newPos = (prev - 1 + galleryImages.length) % galleryImages.length;
-      setMainImage(galleryImages[newPos]); // Update main image
+      setMainImage(galleryImages[newPos]);
       return newPos;
     });
   };
@@ -92,7 +93,7 @@ const ProductDetail = () => {
       setZoomTranslate({ x: 0, y: 0 });
     } else {
       setIsZoomed(true);
-      setZoomScale(1.5); // Initial zoom level
+      setZoomScale(1.5);
     }
   };
 
@@ -169,7 +170,7 @@ const ProductDetail = () => {
 
   const triggerSpin = () => {
     setIsSpinning(true);
-    setTimeout(() => setIsSpinning(false), 500); // Matches animation duration
+    setTimeout(() => setIsSpinning(false), 500);
   };
 
   useEffect(() => {
@@ -186,25 +187,23 @@ const ProductDetail = () => {
   return (
     <div className="body-container">
       <div className="main">
-        <header className="header">
+        {/* Banner integrated directly */}
+        <div className="product-banner">
           <img
             src="https://image-resource.creatie.ai/155865189425801/155865189425803/75f8a6319af930b402b2353c010226ee.png"
-            alt="Header Background"
-            className="header-img"
+            alt="Product Banner Background"
+            className="product-banner-img"
           />
-          <div className="header-overlay"></div>
-          <div className="header-content">
+          <div className="product-banner-overlay"></div>
+          <div className="product-banner-content">
             <h1>Sản Phẩm Của HAONHIEN</h1>
             <p>Thiết kế đẳng cấp số 1 Việt Nam</p>
           </div>
-        </header>
+        </div>
         <div className="content">
           <h1 className="villa-title">DUONG HA VILLA</h1>
           <div className="main-image">
-            <img
-              src={mainImage} // Use dynamic mainImage state
-              alt="Duong Ha Villa"
-            />
+            <img src={mainImage} alt="Duong Ha Villa" />
           </div>
           <div className="gallery">
             <div
@@ -237,7 +236,9 @@ const ProductDetail = () => {
               ))}
             </div>
           </div>
-          <section className="related-products">
+        </div>
+        <section className="related-products-container">
+          <div className="related-products">
             <h2>SẢN PHẨM LIÊN QUAN</h2>
             <div
               className="products-list"
@@ -266,8 +267,8 @@ const ProductDetail = () => {
                 ></button>
               ))}
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
       {fullscreenImage && (
         <div

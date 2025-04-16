@@ -1,0 +1,325 @@
+/* Main Container */
+.support-container {
+  width: 100%;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  background: #f9fafb;
+}
+
+/* Hero Section */
+.hero-section {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0; /* Đảm bảo cao hơn header */
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-image: url(https://image-resource.creatie.ai/155865189425801/155865189425803/b4affd8a78d0d545148ff87ac4b45e19.png);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  color: #ef4444;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 40px;
+}
+
+.hero-description {
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+/* Form Section */
+.form-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+
+.form-container--padded {
+  padding-top: 520px; /* Thêm padding để tránh bị che bởi hero-section */
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+}
+
+.form-title {
+  color: #ef4444;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 32px;
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 992px) {
+  .form-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Form Fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  color: #374151;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #6b7280;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 114px;
+}
+
+.form-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.submit-button {
+  background-color: #ef4444;
+  color: #000000;
+  font-weight: 500;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: rgba(239, 68, 68, 0.9);
+}
+
+/* Contact Information */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(239, 68, 68, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  transition: all 0.3s ease;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-title {
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.contact-value {
+  color: #4b5563;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* Hiệu ứng hover cho từng icon */
+.contact-item--email .contact-icon:hover {
+  transform: rotate(360deg); /* Xoay 360 độ */
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.contact-item--phone .contact-icon:hover {
+  transform: scale(1.2); /* Phóng to */
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.contact-item--facebook .contact-icon:hover {
+  animation: bounce 0.4s ease; /* Hiệu ứng nảy */
+  background-color: #3b5998;
+  color: #ffffff;
+}
+
+.contact-item--instagram .contact-icon:hover {
+  transform: translateY(-5px); /* Di chuyển lên trên */
+  background-color: #e1306c;
+  color: #ffffff;
+}
+
+.contact-item--tiktok .contact-icon:hover {
+  animation: pulse 0.5s infinite; /* Hiệu ứng nhấp nháy */
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Keyframes cho các hiệu ứng */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .form-card {
+    padding: 24px 16px;
+  }
+
+  .form-container--padded {
+    padding-top: 400px; /* Giảm padding cho màn hình nhỏ */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .form-container--padded {
+    padding-top: 350px; /* Giảm thêm padding cho màn hình rất nhỏ */
+  }
+}
