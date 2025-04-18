@@ -118,31 +118,27 @@ function HomePage() {
           {banners.map((banner, index) => (
             <div
               key={index}
-              className={`hn-hero__slide ${
-                index === currentBanner ? "hn-hero__slide--active" : "hn-hero__slide--hidden"
-              }`}
+              className={`hn-hero__slide ${index === currentBanner ? "hn-hero__slide--active" : "hn-hero__slide--hidden"
+                }`}
             >
               <div className="hn-hero__bg">
                 <img
                   src={banner.image}
                   alt={banner.title}
-                  className={`hn-hero__img ${
-                    index === currentBanner ? "hn-hero__img--active" : ""
-                  }`}
+                  className={`hn-hero__img ${index === currentBanner ? "hn-hero__img--active" : ""
+                    }`}
                 />
               </div>
               <div className="hn-hero__content">
                 <h1
-                  className={`hn-hero__title ${
-                    index === currentBanner ? "hn-hero__title--active" : ""
-                  }`}
+                  className={`hn-hero__title ${index === currentBanner ? "hn-hero__title--active" : ""
+                    }`}
                 >
                   {banner.title}
                 </h1>
                 <p
-                  className={`hn-hero__subtitle ${
-                    index === currentBanner ? "hn-hero__subtitle--active" : ""
-                  }`}
+                  className={`hn-hero__subtitle ${index === currentBanner ? "hn-hero__subtitle--active" : ""
+                    }`}
                 >
                   {banner.subtitle}
                 </p>
@@ -155,9 +151,8 @@ function HomePage() {
             {banners.map((_, index) => (
               <button
                 key={index}
-                className={`hn-hero__dot ${
-                  index === currentBanner ? "hn-hero__dot--active" : ""
-                }`}
+                className={`hn-hero__dot ${index === currentBanner ? "hn-hero__dot--active" : ""
+                  }`}
                 onClick={() => handleBannerDotClick(index)}
                 aria-label={`Go to banner ${index + 1}`}
               ></button>
@@ -405,9 +400,8 @@ function HomePage() {
             {services.map((_, index) => (
               <button
                 key={index}
-                className={`hn-services__dot ${
-                  index === currentServicePage ? "hn-services__dot--active" : ""
-                }`}
+                className={`hn-services__dot ${index === currentServicePage ? "hn-services__dot--active" : ""
+                  }`}
                 onClick={() => handleServiceDotClick(index)}
                 aria-label={`Go to service ${index + 1}`}
               ></button>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Product.css';
 
 const Product = () => {
@@ -41,7 +42,7 @@ const Product = () => {
 
     handleResize(); // Set initial value
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -93,36 +94,38 @@ const Product = () => {
       <div className="hero-section">
         <div className="hero-image" style={getBackgroundStyle(images.hero)}></div>
       </div>
-      
+
       {/* Brand carousel section */}
       <div className="brand-carousel-container">
         {/* Navigation buttons */}
         <button className="carousel-nav-btn prev-btn" onClick={prevSlide} aria-label="Previous">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M15 18L9 12L15 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
         <button className="carousel-nav-btn next-btn" onClick={nextSlide} aria-label="Next">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9 18L15 12L9 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
-        
+
         {/* Brand cards */}
         <div className="brand-cards-wrapper">
-          {visibleBrands.map((brand, index) => (
-            <div key={brand.id} className="brand-card">
-              <div className="brand-inner">
-                <div className="brand-image" style={getBackgroundStyle(brand.image)}></div>
-                <div className="brand-label">
-                  <div className="brand-label-text">{brand.label}</div>
+          {visibleBrands.map((brand) => (
+            <Link key={brand.id} to="/noithat" className="brand-card-link">
+              <div className="brand-card">
+                <div className="brand-inner">
+                  <div className="brand-image" style={getBackgroundStyle(brand.image)}></div>
+                  <div className="brand-label">
+                    <div className="brand-label-text">{brand.label}</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
-      
+
       <div className="content-wrapper">
         <div className="section-title">
           <div className="title-text">CÁC GÓI DỊCH VỤ</div>

@@ -14,13 +14,14 @@ import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Support from "../pages/Supports/Support";
 import New from "../pages/News/New";
 import NewByCate from "../pages/NewsByCategory/NewByCate";
+import NewDetail from "../pages/NewDetails/NewDetail";
 // Component to conditionally render Header
 const HeaderWrapper = () => {
   const location = useLocation();
-  // Only render Header if not on the home page
-  return location.pathname !== "/" ? <Header /> : null;
+  // Không hiển thị Header nếu đang ở "/" hoặc "/newdetail"
+  const noHeaderRoutes = ["/", "/newdetail"];
+  return noHeaderRoutes.includes(location.pathname) ? null : <Header />;
 };
-
 const UserRoutes = () => {
   return (
     <Router>
@@ -34,6 +35,7 @@ const UserRoutes = () => {
           <Route path="/support" element={<Support />} />
           <Route path="/new" element={<New />} />
           <Route path="/newbycate" element={<NewByCate />} />
+          <Route path="/newdetail" element={<NewDetail />} />
           {/* Add other routes here as needed */}
         </Routes>
         <Footer />
