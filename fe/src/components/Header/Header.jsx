@@ -43,7 +43,7 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <a href="#" className="hn-nav-link">
+          <a href="/service" className="hn-nav-link">
             DỊCH VỤ
           </a>
           <a href="/new" className="hn-nav-link">

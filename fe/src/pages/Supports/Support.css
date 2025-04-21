@@ -196,75 +196,98 @@
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background-color: #f5f5f5;
 }
 
 .contact-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(239, 68, 68, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ef4444;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #333;
   transition: all 0.3s ease;
 }
 
 .contact-text {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
 }
 
 .contact-title {
-  font-weight: 500;
-  color: #111827;
-  margin: 0 0 4px 0;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.25rem;
 }
 
 .contact-value {
-  color: #4b5563;
+  font-size: 1rem;
+  color: #333;
   margin: 0;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
 }
 
-/* Hiệu ứng hover cho từng icon */
+/* Default colors for icons */
+.contact-item--email .contact-icon {
+  color: #ea4335;
+}
+
+.contact-item--phone .contact-icon {
+  color: #34a853;
+}
+
+.contact-item--facebook .contact-icon {
+  color: #1877f2;
+}
+
+.contact-item--instagram .contact-icon {
+  color: #e4405f;
+}
+
+.contact-item--tiktok .contact-icon {
+  color: #000000;
+}
+
+/* Hover effects for icons */
 .contact-item--email .contact-icon:hover {
-  transform: rotate(360deg); /* Xoay 360 độ */
+  transform: rotate(360deg);
   background-color: #ef4444;
   color: #ffffff;
 }
 
 .contact-item--phone .contact-icon:hover {
-  transform: scale(1.2); /* Phóng to */
+  transform: scale(1.2);
   background-color: #10b981;
   color: #ffffff;
 }
 
 .contact-item--facebook .contact-icon:hover {
-  animation: bounce 0.4s ease; /* Hiệu ứng nảy */
+  animation: bounce 0.4s ease;
   background-color: #3b5998;
   color: #ffffff;
 }
 
 .contact-item--instagram .contact-icon:hover {
-  transform: translateY(-5px); /* Di chuyển lên trên */
+  transform: translateY(-5px);
   background-color: #e1306c;
   color: #ffffff;
 }
 
 .contact-item--tiktok .contact-icon:hover {
-  animation: pulse 0.5s infinite; /* Hiệu ứng nhấp nháy */
+  animation: pulse 0.5s infinite;
   background-color: #000000;
   color: #ffffff;
 }
 
-/* Keyframes cho các hiệu ứng */
+/* Animations */
 @keyframes bounce {
   0%,
   100% {

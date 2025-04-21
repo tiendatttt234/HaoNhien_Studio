@@ -155,9 +155,9 @@ const Product = () => {
                   </span>
                 </div>
               </div>
-              <div className="view-more-btn">
+              <Link to="/service" className="view-more-btn">
                 <div className="btn-text">Xem thêm</div>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="service-row reversed">
@@ -175,9 +175,9 @@ const Product = () => {
                   </span>
                 </div>
               </div>
-              <div className="view-more-btn">
+              <Link to="/service" className="view-more-btn">
                 <div className="btn-text">Xem thêm</div>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="service-row">
@@ -195,9 +195,9 @@ const Product = () => {
                   </span>
                 </div>
               </div>
-              <div className="view-more-btn">
+              <Link to="/service" className="view-more-btn">
                 <div className="btn-text">Xem thêm</div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

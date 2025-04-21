@@ -15,6 +15,8 @@ import Support from "../pages/Supports/Support";
 import New from "../pages/News/New";
 import NewByCate from "../pages/NewsByCategory/NewByCate";
 import NewDetail from "../pages/NewDetails/NewDetail";
+import Service from "../pages/Service/Service";
+import ServiceDetail from "../pages/ServiceDetail/ServiceDeatil";
 // Component to conditionally render Header
 const HeaderWrapper = () => {
   const location = useLocation();
@@ -36,6 +38,8 @@ const UserRoutes = () => {
           <Route path="/new" element={<New />} />
           <Route path="/newbycate" element={<NewByCate />} />
           <Route path="/newdetail" element={<NewDetail />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/servicedetail" element={<ServiceDetail />} />
           {/* Add other routes here as needed */}
         </Routes>
         <Footer />
