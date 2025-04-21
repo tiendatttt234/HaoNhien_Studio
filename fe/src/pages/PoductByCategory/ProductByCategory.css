@@ -164,10 +164,10 @@
 }
 
 .pbc-pagination-button {
-  width: 16px;
+  width: 24px;
   height: 16px;
   border: none;
-  border-radius: 50%;
+  border-radius: 8px;
   background: #ff0000;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;

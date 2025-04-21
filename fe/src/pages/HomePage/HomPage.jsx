@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import "./HomePage.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header"; // Adjust the import path based on your project structure
 
 function HomePage() {
@@ -142,7 +143,7 @@ function HomePage() {
                 >
                   {banner.subtitle}
                 </p>
-                <button className="hn-btn hn-btn--primary">Xem Sản Phẩm</button>
+                <Link to="/product" className="hn-btn hn-btn--primary">Xem Sản Phẩm</Link>
               </div>
             </div>
           ))}

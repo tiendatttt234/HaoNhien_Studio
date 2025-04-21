@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import './ProductDetail.css';
 
 // Dữ liệu liên quan
@@ -222,10 +223,10 @@ const ProductDetail = () => {
               ))}
             </div>
             <button className="carousel-prev" onClick={handleGalleryPrev}>
-              &lt;
+              <ArrowLeft size={24} />
             </button>
             <button className="carousel-next" onClick={handleGalleryNext}>
-              &gt;
+              <ArrowRight size={24} />
             </button>
             <div className="gallery-dots">
               {[...Array(galleryImages.length)].map((_, index) => (
@@ -254,10 +255,10 @@ const ProductDetail = () => {
               ))}
             </div>
             <button className="carousel-prev" onClick={handleProductsPrev}>
-              &lt;
+              <ArrowLeft size={24} />
             </button>
             <button className="carousel-next" onClick={handleProductsNext}>
-              &gt;
+              <ArrowRight size={24} />
             </button>
             <div className="carousel-dots">
               {[...Array(relatedProducts.length)].map((_, index) => (
@@ -294,7 +295,7 @@ const ProductDetail = () => {
           </div>
           <div className="fullscreen-image-container">
             <button className="fullscreen-prev" onClick={handlePrevImage}>
-              &lt;
+              <ArrowLeft size={24} />
             </button>
             <img
               ref={imageRef}
@@ -309,7 +310,7 @@ const ProductDetail = () => {
               onTouchStart={handleImageTouchStart}
             />
             <button className="fullscreen-next" onClick={handleNextImage}>
-              &gt;
+              <ArrowRight size={24} />
             </button>
             {showThumbnails && (
               <div className="thumbnail-list">

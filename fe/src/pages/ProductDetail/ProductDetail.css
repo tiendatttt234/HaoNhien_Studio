@@ -233,7 +233,7 @@
 .carousel-prev,
 .carousel-next {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 8px); /* Move up 7px from center */
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.3);
   color: #ffffff;
@@ -273,9 +273,9 @@
 }
 
 .dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
+  width: 24px;
+  height: 8px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: none;
@@ -384,20 +384,20 @@
   border-radius: 0;
 }
 
-.fullscreen-prev {
+.fullscreen-prev,
+.fullscreen-next {
   position: absolute;
-  left: -60px;
-  top: 50%;
+  top: calc(50% - 7px); /* Move up 7px from center */
   transform: translateY(-50%);
   z-index: 1001;
 }
 
+.fullscreen-prev {
+  left: -60px;
+}
+
 .fullscreen-next {
-  position: absolute;
   right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1001;
 }
 
 .thumbnail-list {

@@ -16,20 +16,20 @@
 }
 
 .hn-header-container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   min-height: 70px;
+  justify-content: space-between;
 }
 
 .hn-logo {
   display: flex;
   align-items: center;
-  margin-right: 10px;
-  order: 0;
+  margin-right: 0;
+  flex-shrink: 0;
 }
 
 .hn-logo-img {
@@ -43,9 +43,21 @@
 .hn-nav-head {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-grow: 0;
-  padding: 0 20px;
+  justify-content: center;
+  gap: 48px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hn-right-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+  width: 200px; /* Match logo width for balance */
+  justify-content: flex-end;
 }
 
 .hn-nav-link {
@@ -55,6 +67,8 @@
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
+  white-space: nowrap;
+  padding: 8px 0;
 }
 
 .hn-nav-link:hover::after {
@@ -129,6 +143,7 @@
   font-weight: 400;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
 .hn-consult-button:hover {
@@ -177,6 +192,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  flex-shrink: 0;
 }
 
 .hn-search-input {
@@ -223,16 +239,40 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .hn-header {
-    height: auto;
-    background: transparent;
+@media (max-width: 1200px) {
+  .hn-nav-head {
+    gap: 32px;
   }
+}
 
+@media (max-width: 992px) {
+  .hn-nav-head {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
   .hn-header-container {
     flex-wrap: wrap;
-    min-height: 60px;
-    justify-content: space-between;
+    padding: 0 16px;
+  }
+
+  .hn-nav-head {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    order: 3;
+  }
+
+  .hn-search-container {
+    order: 2;
+  }
+
+  .hn-logo,
+  .hn-right-section {
+    width: auto;
   }
 
   .hn-menu-toggle {
@@ -242,21 +282,6 @@
 
   .hn-logo {
     order: 0;
-  }
-
-  .hn-nav-head {
-    display: none;
-    width: 100%;
-    background: transparent;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    box-shadow: none;
-    order: 3;
-  }
-
-  .hn-nav-open {
-    display: flex;
   }
 
   .hn-nav-link,
@@ -269,12 +294,6 @@
 
   .hn-nav-link:hover::after {
     display: none;
-  }
-
-  .hn-search-container {
-    width: 100%;
-    margin: 10px 0;
-    order: 4;
   }
 
   .hn-search-input {
