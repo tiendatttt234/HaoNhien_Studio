@@ -135,15 +135,17 @@
 }
 
 .hn-consult-button {
-  padding: 8px 24px;
+  padding: 6px 16px; /* Reduced padding from 8px 24px */
   border: 2px solid #000;
   border-radius: 4px;
   background: transparent;
-  font-size: 16px;
+  font-size: 14px; /* Slightly reduced font size */
   font-weight: 400;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
   white-space: nowrap;
+  text-decoration: none;
+  color: #000;
 }
 
 .hn-consult-button:hover {
@@ -193,10 +195,11 @@
   align-items: center;
   position: relative;
   flex-shrink: 0;
+  width: 240px; /* Increased width by 20% from 200px */
 }
 
 .hn-search-input {
-  padding: 8px 40px 8px 12px;
+  padding: 6px 30px 6px 10px; /* Reduced padding */
   border: 2px solid #000;
   border-radius: 4px 0 0 4px;
   font-size: 14px;
@@ -204,6 +207,7 @@
   background: transparent;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%; /* Make input take full width of container */
 }
 
 .hn-search-input:focus {
@@ -212,7 +216,7 @@
 }
 
 .hn-search-button {
-  padding: 8px 12px;
+  padding: 6px 12px; /* Match the input's vertical padding */
   border: 2px solid #000;
   border-left: none;
   border-radius: 0 4px 4px 0;
@@ -222,6 +226,7 @@
   align-items: center;
   justify-content: center;
   transition: background 0.3s, color 0.3s;
+  height: 100%; /* Make button full height */
 }
 
 .hn-search-button:hover {
@@ -268,6 +273,7 @@
 
   .hn-search-container {
     order: 2;
+    width: 100%; /* Full width on mobile */
   }
 
   .hn-logo,
@@ -303,13 +309,8 @@
   }
 
   .hn-search-button {
-    border-radius: 4px;
-    border: 2px solid #000;
-    border-left: 2px solid #000;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    height: 100%;
+    padding: 6px 12px;
   }
 
   /* Dropdown mobile styles */
