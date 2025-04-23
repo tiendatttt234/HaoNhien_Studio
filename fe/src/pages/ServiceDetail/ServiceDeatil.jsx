@@ -169,17 +169,6 @@ const ServiceDetail = () => {
                 <div className="sd-info">
                     <div className="sd-header">
                         <h1>{serviceData.title}</h1>
-                        <div className="sd-rating-wrapper">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className={i < serviceData.rating ? "sd-star-filled" : "sd-star-empty"} size={16} />
-                            ))}
-                            <span className="sd-review-count">({serviceData.reviewCount} đánh giá)</span>
-                        </div>
-                        <div className="sd-price-status">
-                            <span className={`sd-status ${serviceData.status === "Còn nhận" ? "sd-status-available" : "sd-status-unavailable"}`}>
-                                {serviceData.status}
-                            </span>
-                        </div>
                     </div>
 
                     {/* Tabs */}
@@ -195,12 +184,6 @@ const ServiceDetail = () => {
                             onClick={() => setActiveTab("info")}
                         >
                             Thông số
-                        </button>
-                        <button
-                            className={`sd-tab-button ${activeTab === "reviews" ? "active" : ""}`}
-                            onClick={() => setActiveTab("reviews")}
-                        >
-                            Đánh giá
                         </button>
                     </div>
 
@@ -220,27 +203,6 @@ const ServiceDetail = () => {
                                     <li>Bảo hành: Tùy theo gói dịch vụ</li>
                                     <li>Hỗ trợ: 24/7</li>
                                 </ul>
-                            </div>
-                        )}
-                        {activeTab === "reviews" && (
-                            <div className="sd-reviews">
-                                <h3>Đánh giá từ khách hàng</h3>
-                                <div className="sd-review-item">
-                                    <div className="sd-reviewer-info">
-                                        <img src="/placeholder.svg?height=40&width=40" alt="Avatar" className="sd-reviewer-avatar" />
-                                        <div>
-                                            <h4>Nguyễn Văn A</h4>
-                                            <div className="sd-review-rating">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <Star key={i} className="sd-star-filled" size={14} />
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Dịch vụ rất chuyên nghiệp, thiết kế đẹp và đúng với yêu cầu của tôi. Tôi rất hài lòng với kết quả.
-                                    </p>
-                                </div>
                             </div>
                         )}
                     </div>

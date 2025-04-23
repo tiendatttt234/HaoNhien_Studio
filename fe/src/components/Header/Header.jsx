@@ -1,4 +1,3 @@
-// Header.jsx
 import React, { useState } from 'react';
 import './Header.css';
 import logo from '../../assets/logo.jpg'; // Adjust path based on your structure
@@ -38,7 +37,7 @@ const Header = () => {
               SẢN PHẨM
             </Link>
             <div className="hn-dropdown-menu">
-              <a href="noithat" className="hn-dropdown-item">
+              <a href="/noithat" className="hn-dropdown-item">
                 Nội thất chung cư
               </a>
             </div>
@@ -50,9 +49,24 @@ const Header = () => {
             TIN TỨC
           </a>
           <Link to="/support" className="hn-consult-button">ĐĂNG KÝ TƯ VẤN</Link>
+          {/* Search form for mobile */}
+          <form className="hn-search-container hn-search-mobile" onSubmit={handleSearch}>
+            <input
+              type="text"
+              className="hn-search-input"
+              placeholder="Tìm kiếm..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label="Search"
+            />
+            <button type="submit" className="hn-search-button" aria-label="Search button">
+              <FaSearch className="hn-search-icon" />
+            </button>
+          </form>
         </nav>
 
-        <form className="hn-search-container" onSubmit={handleSearch}>
+        {/* Search form for desktop */}
+        <form className="hn-search-container hn-search-desktop" onSubmit={handleSearch}>
           <input
             type="text"
             className="hn-search-input"

@@ -216,14 +216,48 @@ const Service = () => {
             </div>
             {/* Contact Section */}
             <div className="service-contact-section">
-                <h2 className="service-contact-title">Liên hệ ngay với chúng tôi</h2>
-                <div>
-                    <span className="service-contact-description">
-                        Hãy để chúng tôi giúp bạn hiện thực hóa không gian sống trong mơ ...
-                    </span>
-                    <Link to="/support" className="service-contact-link">
-                        liên hệ ngay
-                    </Link>
+                <div className="service-contact-container">
+                    <div className="service-contact-left">
+                        <h2 className="service-contact-title">Liên hệ ngay với chúng tôi</h2>
+                        <p className="service-contact-description">
+                            Hãy để chúng tôi giúp bạn hiện thực hóa không gian sống trong mơ
+                        </p>
+                        <div className="service-contact-features">
+                            <div className="service-contact-feature">
+                                <div className="service-contact-feature-icon">✓</div>
+                                <div className="service-contact-feature-text">Tư vấn miễn phí 24/7</div>
+                            </div>
+                            <div className="service-contact-feature">
+                                <div className="service-contact-feature-icon">✓</div>
+                                <div className="service-contact-feature-text">Đội ngũ chuyên nghiệp</div>
+                            </div>
+                            <div className="service-contact-feature">
+                                <div className="service-contact-feature-icon">✓</div>
+                                <div className="service-contact-feature-text">Báo giá nhanh chóng</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="service-contact-right">
+                        <div className="service-contact-info">
+                            <div className="service-contact-info-item">
+                                <div className="service-contact-info-icon">📞</div>
+                                <div className="service-contact-info-text">
+                                    <h3>Điện thoại</h3>
+                                    <p>HAONHIEN Studio</p>
+                                </div>
+                            </div>
+                            <div className="service-contact-info-item">
+                                <div className="service-contact-info-icon">✉️</div>
+                                <div className="service-contact-info-text">
+                                    <h3>Email</h3>
+                                    <p>haonhien.studio@gmail.com</p>
+                                </div>
+                            </div>
+                            <Link to="/support" className="service-contact-link">
+                                Liên hệ ngay
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

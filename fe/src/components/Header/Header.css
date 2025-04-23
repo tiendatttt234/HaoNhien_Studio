@@ -1,4 +1,3 @@
-/* Header.css */
 /* Reset and base styles */
 * {
   margin: 0;
@@ -21,20 +20,20 @@
   padding: 0 24px;
   display: flex;
   align-items: center;
-  min-height: 70px;
+  min-height: 150px; /* Increased to accommodate larger logo */
   justify-content: space-between;
 }
 
 .hn-logo {
   display: flex;
   align-items: center;
-  margin-right: 0;
+  margin-right: 24px; /* Increased margin to prevent overlap with nav */
   flex-shrink: 0;
 }
 
 .hn-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 135px; /* 108px * 1.25 */
+  height: 135px; /* 108px * 1.25 */
   object-fit: cover;
   border-radius: 50%;
   background: transparent;
@@ -49,15 +48,6 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.hn-right-section {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-left: auto;
-  width: 200px; /* Match logo width for balance */
-  justify-content: flex-end;
 }
 
 .hn-nav-link {
@@ -78,7 +68,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: #ff0000;
+  background: #000000;
 }
 
 /* Dropdown styles */
@@ -91,6 +81,7 @@
   align-items: center;
   color: #000;
   text-decoration: none;
+  padding: 8px 0;
 }
 
 .hn-dropdown-toggle::after {
@@ -108,13 +99,15 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: #fff;
-  border: 1px solid #000;
+  border: 1px solid #eee;
   border-radius: 4px;
   padding: 10px 0;
-  min-width: 150px;
+  min-width: 200px;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hn-dropdown:hover .hn-dropdown-menu {
@@ -123,11 +116,12 @@
 
 .hn-dropdown-item {
   display: block;
-  padding: 8px 15px;
+  padding: 8px 20px;
   color: #000;
   font-size: 14px;
   text-decoration: none;
   transition: background 0.3s;
+  text-align: center;
 }
 
 .hn-dropdown-item:hover {
@@ -135,22 +129,26 @@
 }
 
 .hn-consult-button {
-  padding: 6px 16px; /* Reduced padding from 8px 24px */
+  padding: 8px 20px;
   border: 2px solid #000;
   border-radius: 4px;
   background: transparent;
-  font-size: 14px; /* Slightly reduced font size */
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: all 0.3s ease;
   white-space: nowrap;
   text-decoration: none;
   color: #000;
+  display: inline-block;
+  line-height: 1.5;
 }
 
 .hn-consult-button:hover {
   background: #000;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hn-menu-toggle {
@@ -169,7 +167,6 @@
   background: #000;
   transition: transform 0.3s, opacity 0.3s;
 }
-
 .hn-menu-icon {
   position: relative;
 }
@@ -195,11 +192,11 @@
   align-items: center;
   position: relative;
   flex-shrink: 0;
-  width: 240px; /* Increased width by 20% from 200px */
+  width: 240px;
 }
 
 .hn-search-input {
-  padding: 6px 30px 6px 10px; /* Reduced padding */
+  padding: 6px 30px 5px 10px;
   border: 2px solid #000;
   border-radius: 4px 0 0 4px;
   font-size: 14px;
@@ -207,16 +204,16 @@
   background: transparent;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
-  width: 100%; /* Make input take full width of container */
+  width: 100%;
 }
 
 .hn-search-input:focus {
-  border-color: #ff0000;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .hn-search-button {
-  padding: 6px 12px; /* Match the input's vertical padding */
+  padding: 6px 12px;
   border: 2px solid #000;
   border-left: none;
   border-radius: 0 4px 4px 0;
@@ -226,7 +223,7 @@
   align-items: center;
   justify-content: center;
   transition: background 0.3s, color 0.3s;
-  height: 100%; /* Make button full height */
+  height: 100%;
 }
 
 .hn-search-button:hover {
@@ -241,6 +238,15 @@
 
 .hn-search-button:hover .hn-search-icon {
   color: #fff;
+}
+
+/* Ensure only one search bar is visible based on screen size */
+.hn-search-mobile {
+  display: none; /* Hidden by default (desktop view) */
+}
+
+.hn-search-desktop {
+  display: flex; /* Visible by default (desktop view) */
 }
 
 /* Responsive Styles */
@@ -263,21 +269,36 @@
   }
 
   .hn-nav-head {
-    position: static;
-    transform: none;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
     width: 100%;
-    gap: 16px;
-    order: 3;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: none;
+    z-index: 1000;
   }
 
-  .hn-search-container {
+  .hn-nav-head.hn-nav-open {
+    display: flex;
+  }
+
+  .hn-search-desktop {
+    display: none; /* Hide desktop search on mobile */
+  }
+
+  .hn-search-mobile {
+    display: flex; /* Show mobile search in menu */
     order: 2;
-    width: 100%; /* Full width on mobile */
+    width: 100%; /* Full width in mobile menu */
+    margin-top: 10px;
   }
 
-  .hn-logo,
-  .hn-right-section {
+  .hn-logo {
     width: auto;
   }
 
@@ -294,56 +315,47 @@
   .hn-consult-button {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
-    font-weight: 400;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
   }
 
-  .hn-nav-link:hover::after {
-    display: none;
+  .hn-nav-link:last-child {
+    border-bottom: none;
   }
 
-  .hn-search-input {
-    width: 100%;
-    border-radius: 4px;
+  .hn-consult-button {
+    margin: 10px 20px;
+    width: calc(100% - 40px);
     border: 2px solid #000;
-  }
-
-  .hn-search-button {
-    height: 100%;
-    padding: 6px 12px;
+    padding: 12px 20px;
+    text-align: center;
   }
 
   /* Dropdown mobile styles */
   .hn-dropdown {
     width: 100%;
-    text-align: center;
   }
 
-  .hn-dropdown-toggle::after {
-    display: none; /* Hide arrow in mobile view */
+  .hn-dropdown-toggle {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
   }
 
   .hn-dropdown-menu {
     position: static;
+    transform: none;
     width: 100%;
-    background: transparent;
     border: none;
+    box-shadow: none;
+    background: #f8f8f8;
+    margin-top: 0;
     padding: 0;
-    display: none;
-  }
-
-  .hn-dropdown:hover .hn-dropdown-menu {
-    display: block;
   }
 
   .hn-dropdown-item {
-    padding: 8px 0;
-    font-size: 14px;
-    color: #000;
-  }
-
-  .hn-dropdown-item:hover {
-    background: transparent;
+    padding: 12px 20px;
+    border-top: 1px solid #eee;
   }
 }
 
@@ -353,8 +365,8 @@
   }
 
   .hn-logo-img {
-    width: 30px;
-    height: 30px;
+    width: 112px; /* 90px * 1.25, rounded */
+    height: 112px; /* 90px * 1.25, rounded */
   }
 
   .hn-search-input {
@@ -369,4 +381,8 @@
   .hn-search-icon {
     font-size: 14px;
   }
+}
+
+.hn-services__dot:hover {
+  background-color: #000000;
 }
