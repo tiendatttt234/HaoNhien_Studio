@@ -156,7 +156,7 @@ const Service = () => {
             </div>
 
             {/* Expert Team Section */}
-            <div className="service-team-section">
+            <Link to="/new" className="service-team-section">
                 <h2 className="service-section-title">Đội ngũ chuyên gia</h2>
                 <p className="service-section-subtitle">Đội ngũ kiến trúc sư và chuyên gia thiết kế giàu kinh nghiệm của chúng tôi</p>
 
@@ -213,7 +213,7 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
             {/* Contact Section */}
             <div className="service-contact-section">
                 <div className="service-contact-container">
